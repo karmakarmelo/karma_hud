@@ -37,15 +37,15 @@ Citizen.CreateThread(function()
     end
 end)
 
---Citizen.CreateThread(function()
---    while true do
---        Wait(1)
---        local player = PlayerPedId()
---        local coords = GetEntityCoords(player)
---        local zone = GetMapZoneAtCoords(coords)
---        DrawTxt(" " ..zone.. " ", 0.087, 0.70, 0.4, 0.4, true, 0, 255, 85, 255, true)
---    end
---end)
+Citizen.CreateThread(function()
+    while true do
+	    Wait(1)
+        local player = PlayerPedId()
+        local coords = GetEntityCoords(player)
+        local temp = GetTemperatureAtCoords(coords)
+        DrawTxt(" " ..math.floor(temp).. "º ", 0.15, 0.75, 0.4, 0.4, true, 0, 255, 85, 255, true)
+    end
+end)
 
 
 RegisterCommand("heading", function()
